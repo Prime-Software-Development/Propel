@@ -1,5 +1,5 @@
 {
-  "name": "propel/propel1",
+  "name": "primesoftwaredevelopment/propel1",
   "description": "Propel is an open-source Object-Relational Mapping (ORM) for PHP5.",
   "keywords": ["orm", "active record", "mapping", "database", "persistence"],
   "homepage": "http://www.propelorm.org/",
@@ -10,9 +10,9 @@
     "homepage": "http://www.willdurand.fr"
   }],
   "autoload": {
-    "classmap": ["runtime/lib", "generator/lib"]
+    "classmap": ["/runtime/lib", "/generator/lib"]
   },
-  "include-path": ["runtime/lib", "generator/lib"],
+  "include-path": ["/runtime/lib", "/generator/lib"],
   "require": {
     "php": ">=5.2.4",
     "phing/phing": ">=2.17"
