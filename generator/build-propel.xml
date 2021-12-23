@@ -43,43 +43,46 @@
 
     <taskdef
             name="propel-om"
-            classname="task.PropelOMTask" classpathRef="propelclasses"/>
+            classname="Propel\generator\lib\task\PropelOMTask"/>
     <taskdef
             name="propel-data-dump"
-            classname="task.PropelDataDumpTask" classpathRef="propelclasses"/>
+            classname="Propel\generator\lib\task\PropelDataDumpTask"/>
     <taskdef
             name="propel-data-sql"
-            classname="task.PropelDataSQLTask" classpathRef="propelclasses"/>
+            classname="Propel\generator\lib\task\PropelDataSQLTask"/>
+    <taskdef
+            name="propel-schema-reversing"
+            classname="Propel\generator\lib\task\PropelSchemaReverseTask"/>
     <taskdef
             name="propel-schema-reverse"
-            classname="task.PropelSchemaReverseTask" classpathRef="propelclasses"/>
+            classname="Propel\generator\lib\task\PropelSchemaReverseTask"/>
     <taskdef
             name="propel-sql"
-            classname="task.PropelSQLTask" classpathRef="propelclasses"/>
+            classname="Propel\generator\lib\task\PropelSQLTask"/>
     <taskdef
             name="propel-sql-diff"
-            classname="task.PropelSQLDiffTask" classpathRef="propelclasses"/>
+            classname="Propel\generator\lib\task\PropelSQLDiffTask"/>
     <taskdef
             name="propel-migration-status"
-            classname="task.PropelMigrationStatusTask" classpathRef="propelclasses"/>
+            classname="Propel\generator\lib\task\PropelMigrationStatusTask"/>
     <taskdef
             name="propel-migration-up"
-            classname="task.PropelMigrationUpTask" classpathRef="propelclasses"/>
+            classname="Propel\generator\lib\task\PropelMigrationUpTask"/>
     <taskdef
             name="propel-migration-down"
-            classname="task.PropelMigrationDownTask" classpathRef="propelclasses"/>
+            classname="Propel\generator\lib\task\PropelMigrationDownTask"/>
     <taskdef
             name="propel-migration"
-            classname="task.PropelMigrationTask" classpathRef="propelclasses"/>
+            classname="Propel\generator\lib\task\PropelMigrationTask"/>
     <taskdef
             name="propel-sql-exec"
-            classname="task.PropelSQLExec" classpathRef="propelclasses"/>
+            classname="Propel\generator\lib\task\PropelSQLExec"/>
     <taskdef
             name="propel-graphviz"
-            classname="task.PropelGraphvizTask" classpathRef="propelclasses"/>
+            classname="Propel\generator\lib\task\PropelGraphvizTask"/>
     <taskdef
             name="propel-convert-conf"
-            classname="task.PropelConvertConfTask" classpathRef="propelclasses"/>
+            classname="Propel\generator\lib\task\PropelConvertConfTask"/>
 
     <!-- ================================================================ -->
     <!-- M A I N  T A R G E T                                             -->
@@ -211,7 +214,7 @@
             <schemafileset dir="${propel.schema.dir}"
                            includes="${propel.schema.sql.includes}"
                            excludes="${propel.schema.sql.excludes}"
-                    />
+            />
         </propel-sql>
     </target>
 
@@ -265,7 +268,7 @@
                 url="${propel.database.buildUrl}"
                 userId="${propel.database.user}"
                 password="${propel.database.password}"
-                />
+        />
     </target>
 
     <!-- ================================================================ -->
@@ -293,7 +296,7 @@
                 samePhpName="${propel.samePhpName}"
                 addVendorInfo="${propel.addVendorInfo}"
                 addValidators="${propel.addValidators}"
-                />
+        />
 
     </target>
 
@@ -335,7 +338,7 @@
             <schemafileset dir="${propel.schema.dir}"
                            includes="${propel.schema.sql.includes}"
                            excludes="${propel.schema.sql.excludes}"
-                    />
+            />
         </propel-sql-diff>
     </target>
 
@@ -459,7 +462,7 @@
             <schemafileset dir="${propel.schema.dir}"
                            includes="${propel.schema.datadtd.includes}"
                            excludes="${propel.schema.datadtd.excludes}"
-                    />
+            />
         </propel-data-sql>
     </target>
 
@@ -493,7 +496,7 @@
             <schemafileset dir="${propel.schema.dir}"
                            includes="${propel.schema.datadtd.includes}"
                            excludes="${propel.schema.datadtd.excludes}"
-                    />
+            />
         </propel-data-dump>
     </target>
 
@@ -545,7 +548,7 @@
             <schemafileset dir="${propel.schema.dir}"
                            includes="${propel.schema.om.includes}"
                            excludes="${propel.schema.om.excludes}"
-                    />
+            />
         </propel-om>
     </target>
 
@@ -576,7 +579,7 @@
             <schemafileset dir="${propel.schema.dir}"
                            includes="${propel.schema.sql.includes}"
                            excludes="${propel.schema.sql.excludes}"
-                    />
+            />
         </propel-convert-conf>
 
     </target>
@@ -621,24 +624,24 @@
             <schemafileset dir="${propel.schema.dir}"
                            includes="${propel.schema.sql.includes}"
                            excludes="${propel.schema.sql.excludes}"
-                    />
+            />
         </propel-graphviz>
     </target>
 
     <taskdef
             name="propel-build-sql"
-            classname="task.PropelSqlBuildTask" classpathRef="propelclasses"/>
+            classname="task.PropelSqlBuildTask"/>
 
     <target name="build-sql">
         <propel-build-sql outputDirectory="${propel.sql.dir}"
                           validate="${propel.schema.validate}"
                           xsd="${propel.schema.xsd.file}"
                           xsl="${propel.schema.xsl.file}"
-                >
+        >
             <schemafileset dir="${propel.schema.dir}"
                            includes="${propel.schema.sql.includes}"
                            excludes="${propel.schema.sql.excludes}"
-                    />
+            />
         </propel-build-sql>
     </target>
 

@@ -46,7 +46,7 @@ class PropelGraphvizTask extends AbstractPropelDataModelTask
      *
      * @param PhingFile $out The db map.
      */
-    public function setOutputDirectory(PhingFile $out)
+    public function setOutputDirectory($out)
     {
         if (!$out->exists()) {
             $out->mkdirs();

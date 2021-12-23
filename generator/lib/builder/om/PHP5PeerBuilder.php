@@ -3,6 +3,8 @@ namespace Propel\generator\lib\builder\om;
 
 use Propel\generator\lib\builder\om\PeerBuilder;
 use Propel\generator\lib\builder\om\ClassTools;
+use Propel\generator\lib\model\Column;
+use Propel\generator\lib\model\ForeignKey;
 
 /**
  * This file is part of the Propel package.
@@ -1204,7 +1206,7 @@ abstract class " . $this->getClassname() . $extendingPeerClass . "
         if ($table->hasCompositePrimaryKey()) {
             $script .= "
 
-        return array(" . implode($pks, ', ') . ");";
+        return array(" . implode(', ', $pks) . ");";
         } else {
             $script .= "
 

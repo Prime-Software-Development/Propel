@@ -9,6 +9,8 @@ use Propel\generator\lib\platform\PropelPlatformInterface;
 use Propel\generator\lib\reverse\SchemaParser;
 use Propel\generator\lib\reverse\mysql\MysqlSchemaParser;
 use Propel\generator\lib\reverse\mysql\SqliteSchemaParser;
+use Propel\generator\lib\builder\om\PHP5PeerBuilder;
+use Propel\generator\lib\builder\util\DefaultEnglishPluralizer;
 
 /**
  * This file is part of the Propel package.
@@ -242,6 +244,7 @@ class GeneratorConfig implements GeneratorConfigInterface
 	public function getConfiguredBuilder(Table $table, $type, $cache = true)
 	{
 		$classname = $this->getBuilderClassname($type);
+		$classname = "\\Propel\\generator\\lib\\builder\\om\\" . $classname;
 		$builder = new $classname($table);
 		$builder->setGeneratorConfig($this);
 
@@ -256,6 +259,7 @@ class GeneratorConfig implements GeneratorConfigInterface
 	public function getConfiguredPluralizer()
 	{
 		$classname = $this->getBuilderClassname('pluralizer');
+		$classname = '\\Propel\\generator\\lib\\builder\\util\\' . $classname;
 		$pluralizer = new $classname();
 
 		return $pluralizer;

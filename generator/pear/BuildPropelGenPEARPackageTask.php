@@ -206,7 +206,7 @@ class BuildPropelGenPEARPackageTask extends MatchingTask
      */
     public function createFileSet()
     {
-        $num = array_push($this->filesets, new FileSet());
+        $num = array_push($this->filesets, new \());
 
         return $this->filesets[$num - 1];
     }

@@ -3,6 +3,8 @@ namespace Propel\generator\lib\model;
 
 use Propel\generator\lib\model\Database;
 use Propel\generator\lib\exception\EngineException;
+use Propel\generator\lib\platform\PropelPlatformInterface;
+use Propel\generator\lib\config\GeneratorConfigInterface;
 
 /**
  * This file is part of the Propel package.

@@ -2,6 +2,13 @@
 namespace Propel\generator\lib\builder\om;
 
 use Propel\generator\lib\builder\om\ObjectBuilder;
+use Propel\generator\lib\model\Table;
+use Propel\generator\lib\model\Column;
+use Propel\generator\lib\model\PropelTypes;
+use Propel\generator\lib\model\ForeignKey;
+use Propel\generator\lib\model\IDMethod;
+use Propel\generator\lib\platform\PropelPlatformInterface;
+
 
 /**
  * This file is part of the Propel package.
@@ -154,7 +161,7 @@ class PHP5ObjectBuilder extends ObjectBuilder
                 if (!($this->getPlatform() instanceof MysqlPlatform && ($val === '0000-00-00 00:00:00' || $val === '0000-00-00'))) {
                     // while technically this is not a default value of null,
                     // this seems to be closest in meaning.
-                    $defDt = new DateTime($val);
+                    $defDt = new \DateTime($val);
                     $defaultValue = var_export($defDt->format($fmt), true);
                 }
             } catch (Exception $x) {

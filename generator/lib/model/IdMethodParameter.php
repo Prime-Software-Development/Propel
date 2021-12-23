@@ -101,9 +101,9 @@ class IdMethodParameter extends XMLElement
     }
 
     /**
-     * @see        XMLElement::appendXml(DOMNode)
+     * @see        XMLElement::appendXml(\DOMNode)
      */
-    public function appendXml(DOMNode $node)
+    public function appendXml(\DOMNode $node)
     {
         $doc = ($node instanceof DOMDocument) ? $node : $node->ownerDocument;
 

@@ -2,6 +2,9 @@
 namespace Propel\generator\lib\builder\om;
 
 use Propel\generator\lib\builder\om\OMBuilder;
+use Propel\generator\lib\model\Table;
+use Propel\generator\lib\model\Column;
+use Propel\generator\lib\model\ForeignKey;
 
 /**
  * This file is part of the Propel package.

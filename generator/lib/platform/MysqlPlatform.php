@@ -7,6 +7,7 @@ use Propel\generator\lib\model\Table;
 use Propel\generator\lib\model\Column;
 use Propel\generator\lib\model\Domain;
 use Propel\generator\lib\model\PropelTypes;
+use Propel\generator\lib\model\ForeignKey;
 
 /**
  * This file is part of the Propel package.

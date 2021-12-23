@@ -263,9 +263,9 @@ class Behavior extends XMLElement
     }
 
     /**
-     * @see       parent::appendXml(DOMNode)
+     * @see       parent::appendXml(\DOMNode)
      */
-    public function appendXml(DOMNode $node)
+    public function appendXml(\DOMNode $node)
     {
         $doc = ($node instanceof DOMDocument) ? $node : $node->ownerDocument;
 

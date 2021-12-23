@@ -1,6 +1,12 @@
 <?php
 namespace Propel\generator\lib\task;
 
+use Propel\generator\lib\task\AbstractPropelDataModelTask;
+use Propel\generator\lib\builder\om\OMBuilder;
+
+require_once 'phing/Project.php';
+require_once 'phing/system/io/PhingFile.php';
+
 /**
  * This file is part of the Propel package.
  * For the full copyright and license information, please view the LICENSE
@@ -58,7 +64,7 @@ class PropelOMTask extends AbstractPropelDataModelTask
      */
     protected function ensureDirExists($path)
     {
-        $f = new PhingFile($this->getOutputDirectory(), $path);
+        $f = new \PhingFile($this->getOutputDirectory(), $path);
         if (!$f->exists()) {
             if (!$f->mkdirs()) {
                 throw new BuildException("Error creating directories: " . $f->getPath());
@@ -81,23 +87,23 @@ class PropelOMTask extends AbstractPropelDataModelTask
         $path = $builder->getClassFilePath();
         $this->ensureDirExists(dirname($path));
 
-        $_f = new PhingFile($this->getOutputDirectory(), $path);
+        $_f = new \PhingFile($this->getOutputDirectory(), $path);
 
         // skip files already created once
         if ($_f->exists() && !$overwrite) {
-            $this->log("\t-> (exists) " . $builder->getClassFilePath(), Project::MSG_VERBOSE);
+            $this->log("\t-> (exists) " . $builder->getClassFilePath(), \Project::MSG_VERBOSE);
 
             return 0;
         }
 
         $script = $builder->build();
         foreach ($builder->getWarnings() as $warning) {
-            $this->log($warning, Project::MSG_WARN);
+            $this->log($warning, \Project::MSG_WARN);
         }
 
         // skip unchanged files
         if ($_f->exists() && $script == $_f->contents()) {
-            $this->log("\t-> (unchanged) " . $builder->getClassFilePath(), Project::MSG_VERBOSE);
+            $this->log("\t-> (unchanged) " . $builder->getClassFilePath(), \Project::MSG_VERBOSE);
 
             return 0;
         }
@@ -125,7 +131,7 @@ class PropelOMTask extends AbstractPropelDataModelTask
         $this->log('Generating PHP files...');
 
         foreach ($dataModels as $dataModel) {
-            $this->log("Datamodel: " . $dataModel->getName(), Project::MSG_VERBOSE);
+            $this->log("Datamodel: " . $dataModel->getName(), \Project::MSG_VERBOSE);
 
             foreach ($dataModel->getDatabases() as $database) {
 
@@ -133,7 +139,7 @@ class PropelOMTask extends AbstractPropelDataModelTask
                     $database->getPlatform()->setIdentifierQuoting(false);
                 }
 
-                $this->log(" - Database: " . $database->getName(), Project::MSG_VERBOSE);
+                $this->log(" - Database: " . $database->getName(), \Project::MSG_VERBOSE);
 
                 foreach ($database->getTables() as $table) {
 
@@ -141,7 +147,7 @@ class PropelOMTask extends AbstractPropelDataModelTask
 
                         $nbWrittenFiles = 0;
 
-                        $this->log("  + Table: " . $table->getName(), Project::MSG_VERBOSE);
+                        $this->log("  + Table: " . $table->getName(), \Project::MSG_VERBOSE);
 
                         // -----------------------------------------------------------------------------------------
                         // Create Peer, Object, and TableMap classes
@@ -244,7 +250,7 @@ class PropelOMTask extends AbstractPropelDataModelTask
 
                         $totalNbFiles += $nbWrittenFiles;
                         if ($nbWrittenFiles == 0) {
-                            $this->log("\t\t(no change)", Project::MSG_VERBOSE);
+                            $this->log("\t\t(no change)", \Project::MSG_VERBOSE);
                         }
                     } // if !$table->isForReferenceOnly()
 

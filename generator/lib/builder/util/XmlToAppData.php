@@ -3,6 +3,8 @@ namespace Propel\generator\lib\builder\util;
 
 use Propel\generator\lib\model\AppData;
 use Propel\generator\lib\exception\SchemaException;
+use Propel\generator\lib\platform\PropelPlatformInterface;
+use Propel\generator\lib\config\GeneratorConfigInterface;
 
 /**
  * This file is part of the Propel package.

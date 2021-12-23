@@ -1,6 +1,10 @@
 <?php
 namespace Propel\generator\lib\util;
 
+use Propel\generator\lib\model\AppData;
+use Propel\generator\lib\model\Database;
+use Propel\generator\lib\model\Table;
+
 /**
  * This file is part of the Propel package.
  * For the full copyright and license information, please view the LICENSE

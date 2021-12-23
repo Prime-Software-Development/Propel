@@ -1,6 +1,11 @@
 <?php
 namespace Propel\generator\lib\builder;
 
+use Propel\generator\lib\model\Table;
+use Propel\generator\lib\config\GeneratorConfig;
+use Propel\generator\lib\config\GeneratorConfigInterface;
+use Propel\generator\lib\platform\PropelPlatformInterface;
+
 /**
  * This file is part of the Propel package.
  * For the full copyright and license information, please view the LICENSE
