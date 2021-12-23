@@ -1,4 +1,8 @@
 <?php
+namespace Propel\generator\lib\builder\om;
+
+use Propel\generator\lib\builder\om\PeerBuilder;
+use Propel\generator\lib\builder\om\ClassTools;
 
 /**
  * This file is part of the Propel package.
@@ -8,8 +12,8 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/PeerBuilder.php';
-require_once dirname(__FILE__) . '/ClassTools.php';
+/*require_once dirname(__FILE__) . '/PeerBuilder.php';
+require_once dirname(__FILE__) . '/ClassTools.php';*/
 
 /**
  * Generates a PHP5 base Peer class for user object model (OM).

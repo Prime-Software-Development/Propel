@@ -1,4 +1,5 @@
 <?php
+namespace Propel\generator\lib\model;
 
 /**
  * This file is part of the Propel package.
@@ -8,11 +9,11 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/ScopedElement.php';
+/*require_once dirname(__FILE__) . '/ScopedElement.php';
 require_once dirname(__FILE__) . '/IDMethod.php';
 require_once dirname(__FILE__) . '/NameGenerator.php';
 require_once dirname(__FILE__) . '/Table.php';
-require_once dirname(__FILE__) . '/Behavior.php';
+require_once dirname(__FILE__) . '/Behavior.php';*/
 
 /**
  * A class for holding application data structures.

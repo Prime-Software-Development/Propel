@@ -1,4 +1,7 @@
 <?php
+namespace Propel\generator\lib\builder\om;
+
+use Propel\generator\lib\builder\om\OMBuilder;
 
 /**
  * This file is part of the Propel package.
@@ -8,7 +11,7 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/OMBuilder.php';
+/*require_once dirname(__FILE__) . '/OMBuilder.php';*/
 
 /**
  * Generates a PHP5 base Query class for user object model (OM).

@@ -1,4 +1,9 @@
 <?php
+namespace Propel\generator\lib\model\diff;
+
+use Propel\generator\lib\model\Database;
+use Propel\generator\lib\model\diff\PropelDatabaseDiff;
+use Propel\generator\lib\model\diff\PropelTableComparator;
 
 /**
  * This file is part of the Propel package.
@@ -8,9 +13,9 @@
  * @license     MIT License
  */
 
-require_once dirname(__FILE__) . '/../Database.php';
+/*require_once dirname(__FILE__) . '/../Database.php';
 require_once dirname(__FILE__) . '/PropelDatabaseDiff.php';
-require_once dirname(__FILE__) . '/PropelTableComparator.php';
+require_once dirname(__FILE__) . '/PropelTableComparator.php';*/
 
 /**
  * Service class for comparing Database objects

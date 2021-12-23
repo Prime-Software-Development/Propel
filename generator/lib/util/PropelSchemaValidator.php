@@ -1,4 +1,5 @@
 <?php
+namespace Propel\generator\lib\util;
 
 /**
  * This file is part of the Propel package.

@@ -1,4 +1,5 @@
 <?php
+namespace Propel\generator\lib\task;
 
 /**
  * This file is part of the Propel package.
@@ -8,13 +9,13 @@
  * @license    MIT License
  */
 
-//include_once 'phing/tasks/ext/CapsuleTask.php';
+/*//include_once 'phing/tasks/ext/CapsuleTask.php';
 require_once 'task/AbstractPropelTask.php';
 include_once 'config/GeneratorConfig.php';
 include_once 'model/AppData.php';
 include_once 'model/Database.php';
 include_once 'builder/util/XmlToAppData.php';
-include_once 'util/PropelSchemaValidator.php';
+include_once 'util/PropelSchemaValidator.php';*/
 
 /**
  * An abstract base Propel task to perform work related to the XML schema file.

@@ -1,4 +1,12 @@
 <?php
+namespace Propel\generator\lib\model\diff;
+
+use Propel\generator\lib\model\Table;
+use Propel\generator\lib\model\diff\PropelTableDiff;
+use Propel\generator\lib\model\diff\PropelColumnComparator;
+use Propel\generator\lib\model\diff\PropelColumnDiff;
+use Propel\generator\lib\model\diff\PropelIndexComparator;
+use Propel\generator\lib\model\diff\PropelForeignKeyComparator;
 
 /**
  * This file is part of the Propel package.
@@ -8,12 +16,12 @@
  * @license     MIT License
  */
 
-require_once dirname(__FILE__) . '/../Table.php';
+/*require_once dirname(__FILE__) . '/../Table.php';
 require_once dirname(__FILE__) . '/PropelTableDiff.php';
 require_once dirname(__FILE__) . '/PropelColumnComparator.php';
 require_once dirname(__FILE__) . '/PropelColumnDiff.php';
 require_once dirname(__FILE__) . '/PropelIndexComparator.php';
-require_once dirname(__FILE__) . '/PropelForeignKeyComparator.php';
+require_once dirname(__FILE__) . '/PropelForeignKeyComparator.php';*/
 
 /**
  * Service class for comparing Table objects

@@ -1,4 +1,10 @@
 <?php
+namespace Propel\generator\lib\model;
+
+use Propel\generator\lib\exception\EngineException;
+use Propel\generator\lib\model\ConstraintNameGenerator;
+use Propel\generator\lib\model\NameGenerator;
+use Propel\generator\lib\model\PhpNameGenerator;
 
 /**
  * This file is part of the Propel package.
@@ -8,10 +14,10 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/../exception/EngineException.php';
+/*require_once dirname(__FILE__) . '/../exception/EngineException.php';
 require_once dirname(__FILE__) . '/NameGenerator.php';
 require_once dirname(__FILE__) . '/PhpNameGenerator.php';
-require_once dirname(__FILE__) . '/ConstraintNameGenerator.php';
+require_once dirname(__FILE__) . '/ConstraintNameGenerator.php';*/
 
 /**
  * A name generation factory.

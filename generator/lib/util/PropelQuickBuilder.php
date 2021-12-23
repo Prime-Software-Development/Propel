@@ -1,4 +1,8 @@
 <?php
+namespace Propel\generator\lib\util;
+
+use Propel\generator\lib\builder\util\XmlToDataSQL;
+use Propel\generator\lib\util\PropelSQLParser;
 
 /**
  * This file is part of the Propel package.
@@ -8,8 +12,8 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/../builder/util/XmlToAppData.php';
-require_once dirname(__FILE__) . '/PropelSQLParser.php';
+/*require_once dirname(__FILE__) . '/../builder/util/XmlToAppData.php';
+require_once dirname(__FILE__) . '/PropelSQLParser.php';*/
 
 class PropelQuickBuilder
 {

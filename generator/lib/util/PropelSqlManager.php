@@ -1,4 +1,8 @@
 <?php
+namespace Propel\generator\lib\util;
+
+use Propel\generator\lib\config\GeneratorConfigInterface;
+use Propel\generator\lib\util\PropelSQLParser;
 
 /**
  * This file is part of the Propel package.
@@ -8,8 +12,8 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/../config/GeneratorConfigInterface.php';
-require_once dirname(__FILE__) . '/../util/PropelSQLParser.php';
+/*require_once dirname(__FILE__) . '/../config/GeneratorConfigInterface.php';
+require_once dirname(__FILE__) . '/../util/PropelSQLParser.php';*/
 
 /**
  * Service class for managing SQL.

@@ -1,4 +1,5 @@
 <?php
+namespace Propel\generator\lib\exception;
 
 /**
  * This file is part of the Propel package.

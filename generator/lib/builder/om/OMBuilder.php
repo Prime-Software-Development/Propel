@@ -1,4 +1,7 @@
 <?php
+namespace Propel\generator\lib\builder\om;
+
+use Propel\generator\lib\builder\DataModelBuilder;
 
 /**
  * This file is part of the Propel package.
@@ -8,7 +11,7 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/../DataModelBuilder.php';
+/*require_once dirname(__FILE__) . '/../DataModelBuilder.php';*/
 
 /**
  * Baseclass for OM-building classes.

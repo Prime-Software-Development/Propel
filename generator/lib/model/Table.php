@@ -1,4 +1,16 @@
 <?php
+namespace Propel\generator\lib\model;
+
+use Propel\generator\lib\model\ScopedElement;
+use Propel\generator\lib\exception\EngineException;
+use Propel\generator\lib\model\IDMethod;
+use Propel\generator\lib\model\NameFactory;
+use Propel\generator\lib\model\Column;
+use Propel\generator\lib\model\Unique;
+use Propel\generator\lib\model\ForeignKey;
+use Propel\generator\lib\model\IdMethodParameter;
+use Propel\generator\lib\model\Validator;
+use Propel\generator\lib\model\Behavior;
 
 /**
  * This file is part of the Propel package.
@@ -8,7 +20,7 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/ScopedElement.php';
+/*require_once dirname(__FILE__) . '/ScopedElement.php';
 require_once dirname(__FILE__) . '/../exception/EngineException.php';
 require_once dirname(__FILE__) . '/IDMethod.php';
 require_once dirname(__FILE__) . '/NameFactory.php';
@@ -17,7 +29,7 @@ require_once dirname(__FILE__) . '/Unique.php';
 require_once dirname(__FILE__) . '/ForeignKey.php';
 require_once dirname(__FILE__) . '/IdMethodParameter.php';
 require_once dirname(__FILE__) . '/Validator.php';
-require_once dirname(__FILE__) . '/Behavior.php';
+require_once dirname(__FILE__) . '/Behavior.php';*/
 
 /**
  * Data about a table used in an application.

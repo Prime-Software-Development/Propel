@@ -1,4 +1,7 @@
 <?php
+namespace Propel\generator\lib\model;
+
+use Propel\generator\lib\builder\util\PropelTemplate;
 
 /**
  * This file is part of the Propel package.
@@ -8,8 +11,8 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/Index.php';
-require_once dirname(__FILE__) . '/../builder/util/PropelTemplate.php';
+/*require_once dirname(__FILE__) . '/Index.php';
+require_once dirname(__FILE__) . '/../builder/util/PropelTemplate.php';*/
 
 /**
  * Information about behaviors of a table.

@@ -1,5 +1,7 @@
 <?php
+namespace Propel\generator\lib\config;
 
+use Propel\generator\lib\config\GeneratorConfigInterface;
 /**
  * This file is part of the Propel package.
  * For the full copyright and license information, please view the LICENSE
@@ -8,7 +10,7 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/GeneratorConfigInterface.php';
+/*require_once dirname(__FILE__) . '/GeneratorConfigInterface.php';*/
 // Phing dependencies
 require_once 'phing/Phing.php';
 

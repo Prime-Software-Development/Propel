@@ -1,4 +1,8 @@
 <?php
+namespace Propel\generator\lib\builder\util;
+
+use Propel\generator\lib\model\AppData;
+use Propel\generator\lib\exception\SchemaException;
 
 /**
  * This file is part of the Propel package.
@@ -8,8 +12,8 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/../../model/AppData.php';
-require_once dirname(__FILE__) . '/../../exception/SchemaException.php';
+/*require_once dirname(__FILE__) . '/../../model/AppData.php';
+require_once dirname(__FILE__) . '/../../exception/SchemaException.php';*/
 
 /**
  * A class that is used to parse an input xml schema file and creates an AppData

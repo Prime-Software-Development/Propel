@@ -1,4 +1,7 @@
 <?php
+namespace Propel\generator\lib\platform;
+
+use Propel\generator\lib\platform\DefaultPlatform;
 
 /**
  * This file is part of the Propel package.
@@ -8,7 +11,7 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/DefaultPlatform.php';
+/*require_once dirname(__FILE__) . '/DefaultPlatform.php';*/
 
 /**
  * SQLite PropelPlatformInterface implementation.

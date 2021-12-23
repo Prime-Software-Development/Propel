@@ -1,4 +1,7 @@
 <?php
+namespace Propel\generator\lib\builder\om;
+
+use Propel\generator\lib\builder\om\PeerBuilder;
 
 /**
  * This file is part of the Propel package.
@@ -8,7 +11,7 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/PeerBuilder.php';
+/*require_once dirname(__FILE__) . '/PeerBuilder.php';*/
 
 /**
  * Generates a PHP5 tree nested set Peer class for user object model (OM).

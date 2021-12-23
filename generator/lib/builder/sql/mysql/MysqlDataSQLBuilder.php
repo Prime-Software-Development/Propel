@@ -1,4 +1,7 @@
 <?php
+namespace Propel\generator\lib\builder\sql\mysql;
+
+use Propel\generator\lib\builder\sql\DataSQLBuilder;
 
 /**
  * This file is part of the Propel package.
@@ -8,7 +11,7 @@
  * @license    MIT License
  */
 
-require_once 'builder/sql/DataSQLBuilder.php';
+/*require_once 'builder/sql/DataSQLBuilder.php';*/
 
 /**
  * MySQL class for building data dump SQL.

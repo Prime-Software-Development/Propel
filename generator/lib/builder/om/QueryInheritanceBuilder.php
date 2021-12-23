@@ -1,4 +1,8 @@
 <?php
+namespace Propel\generator\lib\builder\om;
+
+use Propel\generator\lib\builder\om\OMBuilder;
+use Propel\generator\lib\builder\om\ClassTools;
 
 /**
  * This file is part of the Propel package.
@@ -8,8 +12,8 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/OMBuilder.php';
-require_once dirname(__FILE__) . '/ClassTools.php';
+/*require_once dirname(__FILE__) . '/OMBuilder.php';
+require_once dirname(__FILE__) . '/ClassTools.php';*/
 
 /**
  * Generates the empty PHP5 stub query class for use with single table inheritance.

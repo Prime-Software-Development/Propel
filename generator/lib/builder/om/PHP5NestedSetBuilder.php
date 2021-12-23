@@ -1,4 +1,7 @@
 <?php
+namespace Propel\generator\lib\builder\om;
+
+use Propel\generator\lib\builder\om\ObjectBuilder;
 
 /**
  * This file is part of the Propel package.
@@ -8,7 +11,7 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/ObjectBuilder.php';
+/*require_once dirname(__FILE__) . '/ObjectBuilder.php';*/
 
 /**
  * Generates a PHP5 tree node Object class for user object model (OM) using Nested Set way.

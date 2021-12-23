@@ -1,4 +1,10 @@
 <?php
+namespace Propel\generator\lib\model;
+
+use Propel\generator\lib\model\XMLElement;
+use Propel\generator\lib\exception\EngineException;
+use Propel\generator\lib\model\PropelTypes;
+use Propel\generator\lib\model\Rule;
 
 /**
  * This file is part of the Propel package.
@@ -8,10 +14,10 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/XMLElement.php';
+/*require_once dirname(__FILE__) . '/XMLElement.php';
 require_once dirname(__FILE__) . '/../exception/EngineException.php';
 require_once dirname(__FILE__) . '/PropelTypes.php';
-require_once dirname(__FILE__) . '/Rule.php';
+require_once dirname(__FILE__) . '/Rule.php';*/
 
 /**
  * Validator.

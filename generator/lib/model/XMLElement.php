@@ -1,4 +1,7 @@
 <?php
+namespace Propel\generator\lib\model;
+
+use Propel\generator\lib\model\VendorInfo;
 
 /**
  * This file is part of the Propel package.
@@ -8,7 +11,7 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/VendorInfo.php';
+/*require_once dirname(__FILE__) . '/VendorInfo.php';*/
 
 /**
  * An abstract class for elements represented by XML tags (e.g. Column, Table).

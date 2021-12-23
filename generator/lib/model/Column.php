@@ -1,4 +1,12 @@
 <?php
+namespace Propel\generator\lib\model;
+
+use Propel\generator\lib\model\XMLElement;
+use Propel\generator\lib\exception\EngineException;
+use Propel\generator\lib\model\PropelTypes;
+use Propel\generator\lib\model\Inheritance;
+use Propel\generator\lib\model\Domain;
+use Propel\generator\lib\model\ColumnDefaultValue;
 
 /**
  * This file is part of the Propel package.
@@ -8,12 +16,12 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/XMLElement.php';
+/*require_once dirname(__FILE__) . '/XMLElement.php';
 require_once dirname(__FILE__) . '/../exception/EngineException.php';
 require_once dirname(__FILE__) . '/PropelTypes.php';
 require_once dirname(__FILE__) . '/Inheritance.php';
 require_once dirname(__FILE__) . '/Domain.php';
-require_once dirname(__FILE__) . '/ColumnDefaultValue.php';
+require_once dirname(__FILE__) . '/ColumnDefaultValue.php';*/
 
 /**
  * A Class for holding data about a column used in an Application.

@@ -1,4 +1,7 @@
 <?php
+namespace Propel\generator\lib\model;
+
+use Propel\generator\lib\model\Index;
 
 /**
  * This file is part of the Propel package.
@@ -8,7 +11,7 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/Index.php';
+/*require_once dirname(__FILE__) . '/Index.php';*/
 
 /**
  * Information about unique columns of a table.  This class assumes

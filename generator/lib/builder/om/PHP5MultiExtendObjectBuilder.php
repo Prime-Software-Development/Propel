@@ -1,4 +1,7 @@
 <?php
+namespace Propel\generator\lib\builder\om;
+
+use Propel\generator\lib\builder\om\ObjectBuilder;
 
 /**
  * This file is part of the Propel package.
@@ -8,7 +11,7 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/ObjectBuilder.php';
+/*require_once dirname(__FILE__) . '/ObjectBuilder.php';*/
 
 /**
  * Generates the empty PHP5 stub object class for use with inheritance in the user object model (OM).

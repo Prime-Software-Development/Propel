@@ -1,4 +1,10 @@
 <?php
+namespace Propel\generator\lib\config;
+
+use Propel\generator\lib\config\GeneratorConfig;
+use Propel\generator\lib\config\GeneratorConfigInterface;
+use Propel\generator\lib\platform\PropelPlatformInterface;
+use Propel\generator\lib\platform\SqlitePlatform;
 
 /**
  * This file is part of the Propel package.
@@ -8,10 +14,10 @@
  * @license         MIT License
  */
 
-require_once dirname(__FILE__) . '/GeneratorConfig.php';
+/*require_once dirname(__FILE__) . '/GeneratorConfig.php';
 require_once dirname(__FILE__) . '/GeneratorConfigInterface.php';
 require_once dirname(__FILE__) . '/../platform/PropelPlatformInterface.php';
-require_once dirname(__FILE__) . '/../platform/SqlitePlatform.php';
+require_once dirname(__FILE__) . '/../platform/SqlitePlatform.php';*/
 
 /**
  * @package propel.generator.config

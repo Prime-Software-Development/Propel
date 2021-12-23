@@ -1,4 +1,5 @@
 <?php
+namespace Propel\generator\lib\task;
 
 /**
  * This file is part of the Propel package.
@@ -8,7 +9,7 @@
  * @license    MIT License
  */
 
-require_once 'model/AppData.php';
+/*require_once 'model/AppData.php';*/
 
 /**
  * The task for building SQL DDL based on the XML datamodel.

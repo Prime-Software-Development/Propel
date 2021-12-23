@@ -1,4 +1,5 @@
 <?php
+namespace Propel\generator\lib\task;
 
 /**
  * This file is part of the Propel package.
@@ -8,7 +9,7 @@
  * @license    MIT License
  */
 
-require_once 'task/AbstractPropelTask.php';
+/*require_once 'task/AbstractPropelTask.php';*/
 
 /**
  * This Task lists the migrations yet to be executed

@@ -1,4 +1,8 @@
 <?php
+namespace Propel\generator\lib\platform;
+
+use Propel\generator\lib\platform\DefaultPlatform;
+use Propel\generator\lib\model\Domain;
 
 /**
  * This file is part of the Propel package.
@@ -8,8 +12,8 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/DefaultPlatform.php';
-require_once dirname(__FILE__) . '/../model/Domain.php';
+/*require_once dirname(__FILE__) . '/DefaultPlatform.php';
+require_once dirname(__FILE__) . '/../model/Domain.php';*/
 
 /**
  * MS SQL PropelPlatformInterface implementation.

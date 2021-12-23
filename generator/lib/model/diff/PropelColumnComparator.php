@@ -1,4 +1,8 @@
 <?php
+namespace Propel\generator\lib\model\diff;
+
+use Propel\generator\lib\model\Column;
+use Propel\generator\lib\model\diff\PropelColumnDiff;
 
 /**
  * This file is part of the Propel package.
@@ -8,8 +12,8 @@
  * @license     MIT License
  */
 
-require_once dirname(__FILE__) . '/../Column.php';
-require_once dirname(__FILE__) . '/PropelColumnDiff.php';
+/*require_once dirname(__FILE__) . '/../Column.php';
+require_once dirname(__FILE__) . '/PropelColumnDiff.php';*/
 
 /**
  * Service class for comparing Column objects.

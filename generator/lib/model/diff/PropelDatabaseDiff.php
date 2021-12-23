@@ -1,4 +1,8 @@
 <?php
+namespace Propel\generator\lib\model\diff;
+
+use Propel\generator\lib\model\Database;
+use Propel\generator\lib\model\diff\PropelTableDiff;
 
 /**
  * This file is part of the Propel package.
@@ -8,8 +12,8 @@
  * @license     MIT License
  */
 
-require_once dirname(__FILE__) . '/../Database.php';
-require_once dirname(__FILE__) . '/PropelTableDiff.php';
+/*require_once dirname(__FILE__) . '/../Database.php';
+require_once dirname(__FILE__) . '/PropelTableDiff.php';*/
 
 /**
  * Value object for storing Database object diffs

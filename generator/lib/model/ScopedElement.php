@@ -1,4 +1,7 @@
 <?php
+namespace Propel\generator\lib\model;
+
+use Propel\generator\lib\model\XMLElement;
 
 /**
  * This file is part of the Propel package.
@@ -8,7 +11,7 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/XMLElement.php';
+/*require_once dirname(__FILE__) . '/XMLElement.php';*/
 
 /**
  * Data about an element with a name and optional namespace/schema/package attributes

@@ -1,5 +1,7 @@
 <?php
+namespace Propel\generator\lib\model;
 
+use Propel\generator\lib\model\NameGenerator;
 /**
  * This file is part of the Propel package.
  * For the full copyright and license information, please view the LICENSE
@@ -8,7 +10,7 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/NameGenerator.php';
+/*require_once dirname(__FILE__) . '/NameGenerator.php';*/
 
 /**
  * A <code>NameGenerator</code> implementation for PHP-esque names.

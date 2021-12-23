@@ -1,4 +1,8 @@
 <?php
+namespace Propel\generator\lib\builder\sql;
+
+use Propel\generator\lib\builder\DataModelBuilder;
+use Propel\generator\lib\model\PropelTypes;
 
 /**
  * This file is part of the Propel package.
@@ -8,8 +12,8 @@
  * @license    MIT License
  */
 
-require_once 'builder/DataModelBuilder.php';
-require_once 'model/PropelTypes.php';
+/*require_once 'builder/DataModelBuilder.php';
+require_once 'model/PropelTypes.php';*/
 
 /**
  * Baseclass for SQL data dump SQL building classes.

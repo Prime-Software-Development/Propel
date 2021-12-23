@@ -1,4 +1,7 @@
 <?php
+namespace Propel\generator\lib\model\diff;
+
+use Propel\generator\lib\model\Index;
 
 /**
  * This file is part of the Propel package.
@@ -8,7 +11,7 @@
  * @license     MIT License
  */
 
-require_once dirname(__FILE__) . '/../Index.php';
+/*require_once dirname(__FILE__) . '/../Index.php';*/
 
 /**
  * Service class for comparing Index objects

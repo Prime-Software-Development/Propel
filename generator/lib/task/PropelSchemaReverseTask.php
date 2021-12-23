@@ -1,4 +1,8 @@
 <?php
+namespace Propel\generator\lib\task;
+
+use Propel\generator\lib\config\GeneratorConfig;
+use Propel\generator\lib\model\PropelTypes;
 
 /**
  * This file is part of the Propel package.
@@ -9,8 +13,8 @@
  */
 
 require_once 'phing/tasks/ext/pdo/PDOTask.php';
-require_once 'config/GeneratorConfig.php';
-require_once 'model/PropelTypes.php';
+/*require_once 'config/GeneratorConfig.php';
+require_once 'model/PropelTypes.php';*/
 
 /**
  * This class generates an XML schema of an existing database from

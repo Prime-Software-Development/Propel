@@ -1,4 +1,7 @@
 <?php
+namespace Propel\generator\lib\builder\util;
+
+use Propel\generator\lib\builder\util\Pluralizer;
 
 /**
  * This file is part of the Propel package.
@@ -8,7 +11,7 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/Pluralizer.php';
+/*require_once dirname(__FILE__) . '/Pluralizer.php';*/
 
 /**
  * The default English pluralizer class.
