@@ -1,6 +1,10 @@
 <?php
 namespace Propel\generator\lib\platform;
 
+use Propel\generator\lib\config\GeneratorConfigInterface;
+use Propel\generator\lib\model\Column;
+use Propel\generator\lib\model\Table;
+
 /**
  * This file is part of the Propel package.
  * For the full copyright and license information, please view the LICENSE
@@ -38,14 +42,14 @@ interface PropelPlatformInterface
     /**
      * Sets a database connection to use (for quoting, etc.).
      *
-     * @param PDO $con The database connection to use in this Platform class.
+     * @param \PDO $con The database connection to use in this Platform class.
      */
-    public function setConnection(PDO $con = null);
+    public function setConnection(\PDO $con = null);
 
     /**
      * Returns the database connection to use for this Platform class.
      *
-     * @return PDO The database connection or NULL if none has been set.
+     * @return \PDO The database connection or NULL if none has been set.
      */
     public function getConnection();
 

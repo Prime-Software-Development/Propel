@@ -38,11 +38,11 @@ class Unique extends Index
     }
 
     /**
-     * @see        XMLElement::appendXml(DOMNode)
+     * @see        XMLElement::appendXml(\DOMNode)
      */
-    public function appendXml(DOMNode $node)
+    public function appendXml(\DOMNode $node)
     {
-        $doc = ($node instanceof DOMDocument) ? $node : $node->ownerDocument;
+        $doc = ($node instanceof \DOMDocument) ? $node : $node->ownerDocument;
 
         $uniqueNode = $node->appendChild($doc->createElement('unique'));
         $uniqueNode->setAttribute('name', $this->getName());

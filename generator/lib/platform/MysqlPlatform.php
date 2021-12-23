@@ -1,7 +1,12 @@
 <?php
 namespace Propel\generator\lib\platform;
 
+use Propel\generator\lib\config\GeneratorConfigInterface;
 use Propel\generator\lib\platform\DefaultPlatform;
+use Propel\generator\lib\model\Table;
+use Propel\generator\lib\model\Column;
+use Propel\generator\lib\model\Domain;
+use Propel\generator\lib\model\PropelTypes;
 
 /**
  * This file is part of the Propel package.
@@ -766,10 +771,10 @@ ALTER TABLE %s
     {
         // FIXME - This is a temporary hack to get around apparent bugs w/ PDO+MYSQL
         // See http://pecl.php.net/bugs/bug.php?id=9919
-        if ($column->getPDOType() == PDO::PARAM_BOOL) {
+        if ($column->getPDOType() == \PDO::PARAM_BOOL) {
             return sprintf(
                 "
-%s\$stmt->bindValue(%s, (int) %s, PDO::PARAM_INT);",
+%s\$stmt->bindValue(%s, (int) %s, \PDO::PARAM_INT);",
                 $tab,
                 $identifier,
                 $columnValueAccessor

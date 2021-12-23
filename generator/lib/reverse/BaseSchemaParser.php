@@ -1,4 +1,10 @@
 <?php
+namespace Propel\generator\lib\reverse;
+
+use Propel\generator\lib\config\GeneratorConfig;
+use Propel\generator\lib\config\GeneratorConfigInterface;
+use Propel\generator\lib\reverse\SchemaParser;
+use Propel\generator\lib\model\VendorInfo;
 
 /**
  * This file is part of the Propel package.
@@ -8,7 +14,7 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/SchemaParser.php';
+/*require_once dirname(__FILE__) . '/SchemaParser.php';*/
 
 /**
  * Base class for reverse engineering a database schema.
@@ -23,7 +29,7 @@ abstract class BaseSchemaParser implements SchemaParser
     /**
      * The database connection.
      *
-     * @var        PDO
+     * @var        \PDO
      */
     protected $dbh;
 
@@ -66,9 +72,9 @@ abstract class BaseSchemaParser implements SchemaParser
     protected $platform;
 
     /**
-     * @param PDO $dbh Optional database connection
+     * @param \PDO $dbh Optional database connection
      */
-    public function __construct(PDO $dbh = null)
+    public function __construct(\PDO $dbh = null)
     {
         if ($dbh) {
             $this->setConnection($dbh);
@@ -78,9 +84,9 @@ abstract class BaseSchemaParser implements SchemaParser
     /**
      * Sets the database connection.
      *
-     * @param PDO $dbh
+     * @param \PDO $dbh
      */
-    public function setConnection(PDO $dbh)
+    public function setConnection(\PDO $dbh)
     {
         $this->dbh = $dbh;
     }
@@ -88,7 +94,7 @@ abstract class BaseSchemaParser implements SchemaParser
     /**
      * Gets the database connection.
      *
-     * @return PDO
+     * @return \PDO
      */
     public function getConnection()
     {

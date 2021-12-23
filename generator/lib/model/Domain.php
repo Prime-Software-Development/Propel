@@ -363,11 +363,11 @@ class Domain extends XMLElement
     }
 
     /**
-     * @see        XMLElement::appendXml(DOMNode)
+     * @see        XMLElement::appendXml(\DOMNode)
      */
-    public function appendXml(DOMNode $node)
+    public function appendXml(\DOMNode $node)
     {
-        $doc = ($node instanceof DOMDocument) ? $node : $node->ownerDocument;
+        $doc = ($node instanceof \DOMDocument) ? $node : $node->ownerDocument;
 
         $domainNode = $node->appendChild($doc->createElement('domain'));
         $domainNode->setAttribute('type', $this->getType());

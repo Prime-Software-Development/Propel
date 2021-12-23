@@ -1,4 +1,13 @@
 <?php
+namespace Propel\generator\lib\reverse\mysql;
+
+use Propel\generator\lib\reverse\BaseSchemaParser;
+use Propel\generator\lib\model\PropelTypes;
+use Propel\generator\lib\model\Column;
+use Propel\generator\lib\model\Database;
+use Propel\generator\lib\model\Table;
+
+require_once 'phing/Task.php';
 
 /**
  * This file is part of the Propel package.
@@ -8,7 +17,7 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/../BaseSchemaParser.php';
+/*require_once dirname(__FILE__) . '/../BaseSchemaParser.php';*/
 
 /**
  * SQLite database schema parser.
@@ -73,7 +82,7 @@ class SqliteSchemaParser extends BaseSchemaParser
     /**
      *
      */
-    public function parse(Database $database, Task $task = null)
+    public function parse(Database $database, \Task $task = null)
     {
         $stmt = $this->dbh->query("SELECT name FROM sqlite_master WHERE type='table' UNION ALL SELECT name FROM sqlite_temp_master WHERE type='table' ORDER BY name;");
 

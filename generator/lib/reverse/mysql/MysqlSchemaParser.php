@@ -1,4 +1,18 @@
 <?php
+namespace Propel\generator\lib\reverse\mysql;
+
+use Propel\generator\lib\reverse\BaseSchemaParser;
+use Propel\generator\lib\model\PropelTypes;
+use Propel\generator\lib\model\Column;
+use Propel\generator\lib\model\Database;
+use Propel\generator\lib\model\Table;
+use Propel\generator\lib\model\ColumnDefaultValue;
+use Propel\generator\lib\model\ForeignKey;
+use Propel\generator\lib\model\Index;
+use Propel\generator\lib\model\Unique;
+
+require_once 'phing/Task.php';
+require_once 'phing/Project.php';
 
 /**
  * This file is part of the Propel package.
@@ -8,7 +22,7 @@
  * @license    MIT License
  */
 
-require_once dirname(__FILE__) . '/../BaseSchemaParser.php';
+/*require_once dirname(__FILE__) . '/../BaseSchemaParser.php';*/
 
 /**
  * Mysql database schema parser.
@@ -83,7 +97,7 @@ class MysqlSchemaParser extends BaseSchemaParser
 	/**
 	 *
 	 */
-	public function parse(Database $database, Task $task = null)
+	public function parse(Database $database, \Task $task = null)
 	{
 		$this->addVendorInfo = $this->getGeneratorConfig()->getBuildProperty('addVendorInfo');
 
@@ -93,10 +107,10 @@ class MysqlSchemaParser extends BaseSchemaParser
 		$tables = array();
 
 		if ($task) {
-			$task->log("Reverse Engineering Tables", Project::MSG_VERBOSE);
+			$task->log("Reverse Engineering Tables", \Project::MSG_VERBOSE);
 		}
 
-		while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
+		while ($row = $stmt->fetch(\PDO::FETCH_NUM)) {
 			$name = $row[0];
 			$type = $row[1];
 
@@ -105,7 +119,7 @@ class MysqlSchemaParser extends BaseSchemaParser
 			}
 
 			if ($task) {
-				$task->log("  Adding table '" . $name . "'", Project::MSG_VERBOSE);
+				$task->log("  Adding table '" . $name . "'", \Project::MSG_VERBOSE);
 			}
 
 			$table = new Table($name);
@@ -116,24 +130,24 @@ class MysqlSchemaParser extends BaseSchemaParser
 
 		// Now populate only columns.
 		if ($task) {
-			$task->log("Reverse Engineering Columns", Project::MSG_VERBOSE);
+			$task->log("Reverse Engineering Columns", \Project::MSG_VERBOSE);
 		}
 
 		foreach ($tables as $table) {
 			if ($task) {
-				$task->log("  Adding columns for table '" . $table->getName() . "'", Project::MSG_VERBOSE);
+				$task->log("  Adding columns for table '" . $table->getName() . "'", \Project::MSG_VERBOSE);
 			}
 			$this->addColumns($table);
 		}
 
 		// Now add indices and constraints.
 		if ($task) {
-			$task->log("Reverse Engineering Indices And Constraints", Project::MSG_VERBOSE);
+			$task->log("Reverse Engineering Indices And Constraints", \Project::MSG_VERBOSE);
 		}
 
 		foreach ($tables as $table) {
 			if ($task) {
-				$task->log("  Adding indices and constraints for table '" . $table->getName() . "'", Project::MSG_VERBOSE);
+				$task->log("  Adding indices and constraints for table '" . $table->getName() . "'", \Project::MSG_VERBOSE);
 			}
 
 			$this->addForeignKeys($table);
@@ -155,7 +169,7 @@ class MysqlSchemaParser extends BaseSchemaParser
 	{
 		$stmt = $this->dbh->query("SHOW FULL COLUMNS FROM `" . $table->getName() . "`");
 
-		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+		while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
 			$column = $this->getColumnFromRow($row, $table);
 			$table->addColumn($column);
 		}
@@ -303,7 +317,7 @@ class MysqlSchemaParser extends BaseSchemaParser
 		$database = $table->getDatabase();
 
 		$stmt = $this->dbh->query("SHOW CREATE TABLE `" . $table->getName() . "`");
-		$row = $stmt->fetch(PDO::FETCH_NUM);
+		$row = $stmt->fetch(\PDO::FETCH_NUM);
 
 		$foreignKeys = array(); // local store to avoid duplicates
 
@@ -384,7 +398,7 @@ class MysqlSchemaParser extends BaseSchemaParser
 		// adding each column for that key.
 
 		$indexes = array();
-		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+		while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
 			$colName = $row["Column_name"];
 			$name = $row["Key_name"];
 
@@ -419,7 +433,7 @@ class MysqlSchemaParser extends BaseSchemaParser
 
 		// Loop through the returned results, grouping the same key_name together
 		// adding each column for that key.
-		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+		while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
 			// Skip any non-primary keys.
 			if ($row['Key_name'] !== 'PRIMARY') {
 				continue;
@@ -437,7 +451,7 @@ class MysqlSchemaParser extends BaseSchemaParser
 	protected function addTableVendorInfo(Table $table)
 	{
 		$stmt = $this->dbh->query("SHOW TABLE STATUS LIKE '" . $table->getName() . "'");
-		$row = $stmt->fetch(PDO::FETCH_ASSOC);
+		$row = $stmt->fetch(\PDO::FETCH_ASSOC);
 		if (!$this->addVendorInfo) {
 			//since we depend on `Engine` in the MysqlPlatform, we have always extract this vendor information
 			$row = array('Engine' => $row['Engine']);

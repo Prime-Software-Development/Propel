@@ -1,5 +1,10 @@
 <?php
+namespace Propel\generator\lib\reverse;
 
+use Propel\generator\lib\config\GeneratorConfigInterface;
+use Propel\generator\lib\model\Database;
+
+require_once 'phing/Task.php';
 /**
  * This file is part of the Propel package.
  * For the full copyright and license information, please view the LICENSE
@@ -21,16 +26,16 @@ interface SchemaParser
     /**
      * Gets the database connection.
      *
-     * @return PDO
+     * @return \PDO
      */
     public function getConnection();
 
     /**
      * Sets the database connection.
      *
-     * @param PDO $dbh
+     * @param \PDO $dbh
      */
-    public function setConnection(PDO $dbh);
+    public function setConnection(\PDO $dbh);
 
     /**
      * Sets the GeneratorConfig to use in the parsing.
@@ -63,5 +68,5 @@ interface SchemaParser
      *
      * @return int number of generated tables
      */
-    public function parse(Database $database, Task $task = null);
+    public function parse(Database $database, \Task $task = null);
 }

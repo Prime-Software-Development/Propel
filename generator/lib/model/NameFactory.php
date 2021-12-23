@@ -60,7 +60,8 @@ class NameFactory
     protected static function getAlgorithm($name)
     {
         if (!isset(self::$algorithms[$name])) {
-            self::$algorithms[$name] = new $name();
+	        $fqName = "\\Propel\\generator\\lib\\model\\" . $name;
+	        self::$algorithms[$name] = new $fqName();
         }
 
         return self::$algorithms[$name];

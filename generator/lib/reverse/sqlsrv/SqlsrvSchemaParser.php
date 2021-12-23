@@ -1,4 +1,7 @@
 <?php
+namespace Propel\generator\lib\reverse\mysql;
+
+use Propel\generator\lib\reverse\mysql\MssqlSchemaParser;
 
 /**
  * This file is part of the Propel package.
@@ -8,7 +11,7 @@
  * @license    MIT License
  */
 
-require_once 'reverse/mssql/MssqlSchemaParser.php';
+/*require_once 'reverse/mssql/MssqlSchemaParser.php';*/
 
 /**
  * Microsoft SQL Server database schema parser.

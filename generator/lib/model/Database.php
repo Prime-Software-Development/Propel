@@ -667,11 +667,11 @@ class Database extends ScopedElement
     }
 
     /**
-     * @see        XMLElement::appendXml(DOMNode)
+     * @see        XMLElement::appendXml(\DOMNode)
      */
-    public function appendXml(DOMNode $node)
+    public function appendXml(\DOMNode $node)
     {
-        $doc = ($node instanceof DOMDocument) ? $node : $node->ownerDocument;
+        $doc = ($node instanceof \DOMDocument) ? $node : $node->ownerDocument;
 
         $dbNode = $node->appendChild($doc->createElement('database'));
 

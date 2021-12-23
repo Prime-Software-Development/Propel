@@ -7,6 +7,7 @@ use Propel\generator\lib\model\PropelTypes;
 use Propel\generator\lib\model\Inheritance;
 use Propel\generator\lib\model\Domain;
 use Propel\generator\lib\model\ColumnDefaultValue;
+use Propel\generator\lib\platform\PropelPlatformInterface;
 
 /**
  * This file is part of the Propel package.
@@ -1032,11 +1033,11 @@ class Column extends XMLElement
     }
 
     /**
-     * @see         XMLElement::appendXml(DOMNode)
+     * @see         XMLElement::appendXml(\Node)
      */
-    public function appendXml(DOMNode $node)
+    public function appendXml(\DOMNode $node)
     {
-        $doc = ($node instanceof DOMDocument) ? $node : $node->ownerDocument;
+        $doc = ($node instanceof \DOMDocument) ? $node : $node->ownerDocument;
 
         $colNode = $node->appendChild($doc->createElement('column'));
         $colNode->setAttribute('name', $this->name);

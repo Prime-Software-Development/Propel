@@ -1828,11 +1828,11 @@ class Table extends ScopedElement implements IDMethod
     /**
      * Appends XML nodes to passed-in DOMNode.
      *
-     * @param DOMNode $node
+     * @param \DOMNode $node
      */
-    public function appendXml(DOMNode $node)
+    public function appendXml(\DOMNode $node)
     {
-        $doc = ($node instanceof DOMDocument) ? $node : $node->ownerDocument;
+        $doc = ($node instanceof \DOMDocument) ? $node : $node->ownerDocument;
 
         $tableNode = $node->appendChild($doc->createElement('table'));
         $tableNode->setAttribute('name', $this->getCommonName());

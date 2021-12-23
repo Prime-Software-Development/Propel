@@ -1,6 +1,7 @@
 <?php
 namespace Propel\generator\lib\platform;
 
+use Propel\generator\lib\config\GeneratorConfigInterface;
 use Propel\generator\lib\platform\PropelPlatformInterface;
 use Propel\generator\lib\model\Column;
 use Propel\generator\lib\model\Table;
@@ -39,7 +40,7 @@ class DefaultPlatform implements PropelPlatformInterface
     protected $schemaDomainMap;
 
     /**
-     * @var        PDO Database connection.
+     * @var        \PDO Database connection.
      */
     protected $con;
 
@@ -51,9 +52,9 @@ class DefaultPlatform implements PropelPlatformInterface
     /**
      * Default constructor.
      *
-     * @param PDO $con Optional database connection to use in this platform.
+     * @param \PDO $con Optional database connection to use in this platform.
      */
-    public function __construct(PDO $con = null)
+    public function __construct(\PDO $con = null)
     {
         if ($con) {
             $this->setConnection($con);
@@ -64,9 +65,9 @@ class DefaultPlatform implements PropelPlatformInterface
     /**
      * Set the database connection to use for this Platform class.
      *
-     * @param PDO $con Database connection to use in this platform.
+     * @param \PDO $con Database connection to use in this platform.
      */
-    public function setConnection(PDO $con = null)
+    public function setConnection(\PDO $con = null)
     {
         $this->con = $con;
     }
@@ -74,7 +75,7 @@ class DefaultPlatform implements PropelPlatformInterface
     /**
      * Returns the database connection to use for this Platform class.
      *
-     * @return PDO The database connection or NULL if none has been set.
+     * @return \PDO The database connection or NULL if none has been set.
      */
     public function getConnection()
     {

@@ -123,9 +123,9 @@ abstract class XMLElement
     /**
      * Appends DOM elements to represent this object in XML.
      *
-     * @param DOMNode $node
+     * @param \DOMNode $node
      */
-    abstract public function appendXml(DOMNode $node);
+    abstract public function appendXml(\DOMNode $node);
 
     /**
      * Sets an associated VendorInfo object.
@@ -201,7 +201,7 @@ abstract class XMLElement
      */
     public function toString()
     {
-        $doc = new DOMDocument('1.0');
+        $doc = new \DOMDocument('1.0');
         $doc->formatOutput = true;
         $this->appendXml($doc);
         $xmlstr = $doc->saveXML();
