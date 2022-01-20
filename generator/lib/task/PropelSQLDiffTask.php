@@ -1,6 +1,12 @@
 <?php
 namespace Propel\generator\lib\task;
 
+use Propel\generator\lib\util\PropelMigrationManager;
+use Propel\generator\lib\model\AppData;
+use Propel\generator\lib\model\Database;
+use Propel\generator\lib\model\IDMethod;
+use Propel\generator\lib\model\diff\PropelDatabaseComparator;
+
 /**
  * This file is part of the Propel package.
  * For the full copyright and license information, please view the LICENSE
@@ -103,7 +109,7 @@ class PropelSQLDiffTask extends AbstractPropelDataModelTask
         $this->log('Reading databases structure...');
         $connections = $generatorConfig->getBuildConnections();
         if (!$connections) {
-            throw new Exception('You must define database connection settings in a buildtime-conf.xml file to use diff');
+            throw new \Exception('You must define database connection settings in a buildtime-conf.xml file to use diff');
         }
         $manager = new PropelMigrationManager();
         $manager->setConnections($connections);
@@ -111,13 +117,13 @@ class PropelSQLDiffTask extends AbstractPropelDataModelTask
         $manager->setMigrationTable($this->getGeneratorConfig()->getBuildProperty('migrationTable'));
 
         if ($manager->hasPendingMigrations()) {
-            throw new Exception('Uncommitted migrations have been found ; you should either execute or delete them before rerunning the \'diff\' task');
+            throw new \Exception('Uncommitted migrations have been found ; you should either execute or delete them before rerunning the \'diff\' task');
         }
 
         $totalNbTables = 0;
         $ad = new AppData();
         foreach ($connections as $name => $params) {
-            $this->log(sprintf('Connecting to database "%s" using DSN "%s"', $name, $params['dsn']), Project::MSG_VERBOSE);
+            $this->log(sprintf('Connecting to database "%s" using DSN "%s"', $name, $params['dsn']), \Project::MSG_VERBOSE);
             $pdo = $generatorConfig->getBuildPDO($name);
             $database = new Database($name);
             $platform = $generatorConfig->getConfiguredPlatform($pdo);
@@ -131,7 +137,7 @@ class PropelSQLDiffTask extends AbstractPropelDataModelTask
             $nbTables = $parser->parse($database, $this);
             $ad->addDatabase($database);
             $totalNbTables += $nbTables;
-            $this->log(sprintf('%d tables found in database "%s"', $nbTables, $name), Project::MSG_VERBOSE);
+            $this->log(sprintf('%d tables found in database "%s"', $nbTables, $name), \Project::MSG_VERBOSE);
         }
         if ($totalNbTables) {
             $this->log(sprintf('%d tables found in all databases.', $totalNbTables));
@@ -150,7 +156,7 @@ class PropelSQLDiffTask extends AbstractPropelDataModelTask
         $migrationsDown = array();
         foreach ($ad->getDatabases() as $database) {
             $name = $database->getName();
-            $this->log(sprintf('Comparing database "%s"', $name), Project::MSG_VERBOSE);
+            $this->log(sprintf('Comparing database "%s"', $name), \Project::MSG_VERBOSE);
             if (!$appDataFromXml->hasDatabase($name)) {
                 // FIXME: tables present in database but not in XML
                 continue;
@@ -158,7 +164,7 @@ class PropelSQLDiffTask extends AbstractPropelDataModelTask
             $databaseDiff = PropelDatabaseComparator::computeDiff($database, $appDataFromXml->getDatabase($name), $this->isCaseInsensitive());
 
             if (!$databaseDiff) {
-                $this->log(sprintf('Same XML and database structures for datasource "%s" - no diff to generate', $name), Project::MSG_VERBOSE);
+                $this->log(sprintf('Same XML and database structures for datasource "%s" - no diff to generate', $name), \Project::MSG_VERBOSE);
                 continue;
             }
 
@@ -178,7 +184,7 @@ class PropelSQLDiffTask extends AbstractPropelDataModelTask
         $migrationFileName = $manager->getMigrationFileName($timestamp);
         $migrationClassBody = $manager->getMigrationClassBody($migrationsUp, $migrationsDown, $timestamp);
 
-        $_f = new PhingFile($this->getOutputDirectory(), $migrationFileName);
+        $_f = new \PhingFile($this->getOutputDirectory(), $migrationFileName);
         file_put_contents($_f->getAbsolutePath(), $migrationClassBody);
         $this->log(sprintf('"%s" file successfully created in %s', $_f->getName(), $_f->getParent()));
         if ($editorCmd = $this->getEditorCmd()) {

@@ -4,6 +4,7 @@ namespace Propel\generator\lib\task;
 use Propel\generator\lib\config\GeneratorConfig;
 use Propel\generator\lib\builder\util\XmlToAppData;
 use Propel\generator\lib\util\PropelSchemaValidator;
+use Propel\generator\lib\exception\EngineException;
 
 require_once 'phing/Project.php';
 require_once 'phing/system/io/FileSystem.php';
@@ -355,7 +356,7 @@ abstract class AbstractPropelDataModelTask extends AbstractPropelTask
 	/**
 	 * Nested creator, creates one Mapper for this task.
 	 *
-	 * @return Mapper         The created Mapper type object.
+	 * @return \Mapper         The created Mapper type object.
 	 * @throws BuildException
 	 */
 	public function createMapper()
@@ -363,7 +364,7 @@ abstract class AbstractPropelDataModelTask extends AbstractPropelTask
 		if ($this->mapperElement !== null) {
 			throw new BuildException("Cannot define more than one mapper.", $this->location);
 		}
-		$this->mapperElement = new Mapper($this->project);
+		$this->mapperElement = new \Mapper($this->project);
 
 		return $this->mapperElement;
 	}

@@ -8,6 +8,9 @@ use Propel\generator\lib\model\Column;
 use Propel\generator\lib\model\Domain;
 use Propel\generator\lib\model\PropelTypes;
 use Propel\generator\lib\model\ForeignKey;
+use Propel\generator\lib\model\diff\PropelDatabaseDiff;
+use Propel\generator\lib\model\diff\PropelTableDiff;
+use Propel\generator\lib\model\Index;
 
 /**
  * This file is part of the Propel package.

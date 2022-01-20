@@ -4,6 +4,7 @@ namespace Propel\generator\lib\model\diff;
 use Propel\generator\lib\model\Database;
 use Propel\generator\lib\model\diff\PropelDatabaseDiff;
 use Propel\generator\lib\model\diff\PropelTableComparator;
+use Propel\generator\lib\model\Table;
 
 /**
  * This file is part of the Propel package.

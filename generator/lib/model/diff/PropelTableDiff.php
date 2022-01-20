@@ -3,6 +3,7 @@ namespace Propel\generator\lib\model\diff;
 
 use Propel\generator\lib\model\Table;
 use Propel\generator\lib\model\diff\PropelColumnDiff;
+use Propel\generator\lib\model\Index;
 
 /**
  * This file is part of the Propel package.

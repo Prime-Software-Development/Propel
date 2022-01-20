@@ -67,7 +67,7 @@ class PropelMigrationManager
             $buildConnection = $this->getConnection($datasource);
             $buildConnection['dsn'] = str_replace("@DB@", $datasource, $buildConnection['dsn']);
 
-            $this->pdoConnections[$datasource] = Propel::initConnection($buildConnection, $datasource);
+            $this->pdoConnections[$datasource] = \Propel::initConnection($buildConnection, $datasource);
         }
 
         return $this->pdoConnections[$datasource];
